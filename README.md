@@ -65,7 +65,8 @@ When the entered password matches with the password linked to the account number
   
 If the user wishes to change the password, we send an *OTP* to the phone number of the user.  
 When the user enters the correct OTP, we allow the user to change their password.  
-  
+The password should be atleast 5 characters long.  
+
   
 **NOTE:** OTP message is displayed on the console for our convinience as of now.
 
