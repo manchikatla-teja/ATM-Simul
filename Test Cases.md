@@ -1,110 +1,627 @@
-# ATM-Simul
 
-- [Introduction](#intro)
-- [Functions of the ATM](#functions)
-- [Additional Features](#add_features)
+# Test Cases
 
-<a name="intro"></a>
-## Introduction
+<details>
 
-This project is the simulation of an ATM. 
-If we want to simulate an ATM, the first and foremost thing we need is the account information.
-### a. Accounts
-*You can find the [code](https://github.com/manchikatla-teja/ATM-Simul/blob/main/ATM.java) here.*  
+<summary><strong>Test Cases for Check Balance</strong></summary>
+
+- [Account Banned](#account_ban_cb)
+- [Entered Wrong Password](#wrong_pass_cb)
+- [Entered Wrong Password 3 Times](#3_wrong_cb)
+- [Correct Password, Show Balance](#proceed_cb)
+</details>
+
+<details>
+
+<summary><strong>Test Cases for Changing Password</strong></summary>
+
+- [Account Banned](#account_ban_cp)
+- [Wrong OTP](#wrong_otp)
+- [New Password Length less than 5](#pass<5)
+- [Password change successful](#pass_ok)                                             
+</details>
   
   
-For this purpose, we have created a few accounts which replicate the account database of the bank.  
-Each account consists of the following private information.
-- Account Number
-- Account Password
-- Account Type
-- Account Validity
-- Account Balance  
+<details>
 
-To protect the privacy of the information, we have used *getter and setter methods* for accessing the information and modifying the information respectively.
+<summary><strong>Test Cases for Deposit</strong></summary>
 
-### b. Checking Password
-In an ATM, secrecy is the foremost thing it offers. So password checking is a must-include feature.  
+- [Account Banned](#account_ban_dm)
+- [Entered Wrong Password](#wrong_pass_dm)
+- [Entered Wrong Password 3 Times](#3_wrong_dm)
+- [Invalid Denomination Info](#inv_den_info_dm)
+- [Successful Deposit](#deposit_dm)
+                                          
+</details>
   
   
-*You can find the [code](https://github.com/manchikatla-teja/ATM-Simul/blob/main/CheckPassword.java) here.*  
+<details>
+
+<summary><strong>Test Cases for Withdraw</strong></summary>
+
+- [Account Banned](#account_ban_wd)
+- [Entered Wrong Password](#wrong_pass_wd)
+- [Entered Wrong Password 3 Times](#3_wrong_wd)
+- [Withdraw more than Maximum Limit](#with>max_wd)
+- [Withdraw more than Current Balance](#with>bal_wd)
+- [Successful Withdrawal](#withdraw_wd)
+                                          
+</details>
+
+
+<details>
+
+<summary><strong>Test Cases for Money Transfer</strong></summary>
+
+- [Account Banned](#account_ban_mt)
+- [Entered Wrong Password](#wrong_pass_mt)
+- [Entered Wrong Password 3 Times](#3_wrong_mt)
+- [Transfer more than Curretn Balance](#tran>max_mt)
+- [Successful transfer](#transfer_mt)
+                                          
+</details>
+
+
+<a name="account_ban_cb"></a>
+## Account Banned (Check Balance)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :
+  ### Input
+5
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
   
   
-We offer the user **3** chances to type in the correct password.  
-Upon failure to do so, the account of the user is banned and a warning message is displayed.
-
-
-### c. Running the code
-When the code is executed, we ask the user to input their account number.
-If the account exists in the database, then we proceed with the functions of the ATM.  
+<a name="wrong_pass_cb"></a>
+## Entered Wrong Password (Check Balance)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :
+  ### Input
+  5  
+  **some wrong password**
+### Output
+Your password was wrong.
   
   
-Run the given code to start execution. [ATM.java](https://github.com/manchikatla-teja/ATM-Simul/blob/main/ATM.java)
-
-<a name="functions"></a>
-## Functions of the ATM
-In this project, we simulate the basic functioning of an ATM. The functions include:
-
-1. [Check Balance](#check_balance)
-2. [Change Password](#change_password)
-3. [Deposit Money](#deposit_money)
-4. [Withdraw Money](#withdraw_money)
-5. [Money Transfer](#money_transfer)
-
-<a name="check_balance"></a>
-### 1. Check Balance
-*You can find the [code for checking balance](https://github.com/manchikatla-teja/ATM-Simul/blob/main/CheckBalance.java) here.*  
+  
+<a name="3_wrong_cb"></a>
+## Entered Wrong Password 3 Times
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :  
+  Enter your password :  
+  Enter your password :  
+  ### Input
+  5  
+  **some wrong password**  
+  **some wrong password**  
+  **some wrong password**  
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
   
   
-When the entered password matches with the password linked to the account number, we display the *current balance* in the account of the user.
-
-<a name="change_password"></a>
-### 2. Change Password
-*You can find the [code for changing password](https://github.com/manchikatla-teja/ATM-Simul/blob/main/ChangePassword.java) here.*  
+  
+<a name="proceed_cb"></a>
+## Correct Password, Show Balance
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :
+  ### Input
+  5  
+  **correct password**
+### Output
+Your balance is : **balance in account** Rs.
   
   
-If the user wishes to change the password, we send an *OTP* to the phone number of the user.  
-When the user enters the correct OTP, we allow the user to change their password.  
+<a name="account_ban_cp"></a>
+## Account Banned (Password Changed)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :
+  ### Input
+1
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+
+<a name="wrong_otp"></a>
+## Wrong OTP
+ ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+  
+  Do you want to change your password? (true/false)  
+Type here :  
+  
+You received an OTP on your registered mobile number **some phone number**.  
+Your One-Time-Password for Password reset is **OTP**. Kindly do not share this with anyone.  
+
+Please enter the OTP you received.  
+  ### Input
+  1  
+  true  
+  **Wrong OTP**  
+  ### Output
+  Wrong OTP entered!!  
   
   
-**NOTE:** OTP message is displayed on the console for our convinience as of now.
+  
+<a name="pass<5"></a>
+## Password Less than 5 Characters
+  
+ ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+  
+  Do you want to change your password? (true/false)  
+Type here :  
+  
+You received an OTP on your registered mobile number **some phone number**.  
+Your One-Time-Password for Password reset is **OTP**. Kindly do not share this with anyone.  
 
+Please enter the OTP you received.  
+  
+  Please choose a strong password for safety. A minimum of 5 characters long password is required.  
+Enter new Password:  
+  ### Input
+  1  
+  true  
+  **Correct OTP**  
+  **Password less than 5 characters**
+  ### Output
+  Please choose a password of atleast 5 characters long.  
+  
+Enter new password:  
+  
+  
+<a name="pass_ok"></a>
+## Successful Password Change
+  ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+  
+  Do you want to change your password? (true/false)  
+Type here :  
+  
+You received an OTP on your registered mobile number **some phone number**.  
+Your One-Time-Password for Password reset is **OTP**. Kindly do not share this with anyone.  
 
-<a name="deposit_money"></a>
-### 3. Deposit Money
-*You can find the [code for depositing money](https://github.com/manchikatla-teja/ATM-Simul/blob/main/Deposit.java) here.*  
+Please enter the OTP you received.  
+  
+  Please choose a strong password for safety. A minimum of 5 characters long password is required.  
+Enter new Password:  
+  ### Input
+  1  
+  true  
+  **Correct OTP**  
+  **Password greater than or equal to 5 characters**
+  ### Output
+  Password Changed Successfully!!  
+  
+  
+  
+  
+<a name="account_ban_dm"></a>
+## Account Banned (Deposit Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :
+  ### Input
+3
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+  
+<a name="wrong_pass_dm"></a>
+## Entered Wrong Password (Deposit Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :
+  ### Input
+  3  
+  **some wrong password**
+### Output
+Your password was wrong.  
+  
+  
+<a name="3_wrong_dm"></a>
+## Entered Wrong Password 3 Times (Deposit Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :  
+  Enter your password :  
+  Enter your password :  
+  ### Input
+  3  
+  **some wrong password**  
+  **some wrong password**  
+  **some wrong password**  
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+<a name="inv_den_info_dm"></a>
+## Invalid Denomination Info
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
 
-The user is requested to enter the amount of money, they want to *deposit* and also the *denomination of notes*.  
-Once the denomination of notes and the total amount of money user wants to deposit matches, and the user enters correct password, we allow the user to deposit their money into the ATM slot.  
+Enter the amount you want to deposit (Rs.):  
+  Please enter the following info :
+Number of Rs.100 notes :   
+Number of Rs.500 notes :   
+Number of Rs.2000 notes :   
+  
+  ### Input
+  3  
+  **Amount to Deposit**  
+  **Invalid Denomination Information**
+  
+  ### Output
+  Please check the denomation info!  
+Please input again.
+  
+  
+<a name="deposit_dm"></a>
+## Successful Deposit
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
 
-**NOTE:** The task of checking denomination of notes is done by the ATM itself. Since we cannot represent it here, we request the user to do it for our project.
+Enter the amount you want to deposit (Rs.):  
+  Please enter the following info :  
+Number of Rs.100 notes :  
+Number of Rs.500 notes :   
+Number of Rs.2000 notes :   
+  Enter Your Password :  
+  
+  ### Input
+  3  
+  **Amount to Deposit**  
+  **Valid Denomination Information**  
+  **Correct Password**
+  
+  ### Output
+  Deposit your cash here!  
+  
+  
+  
+  
+<a name="account_ban_wd"></a>
+## Account Banned (Withdraw Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :
+  ### Input
+2
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+<a name="wrong_pass_wd"></a>
+## Entered Wrong Password (Withdraw Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :
+  ### Input
+  2  
+  **some wrong password**
+### Output
+Your password was wrong.  
+  
+  
+<a name="3_wrong_wd"></a>
+## Entered Wrong Password 3 Times (Withdraw Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :  
+  Enter your password :  
+  Enter your password :  
+  ### Input
+  2  
+  **some wrong password**  
+  **some wrong password**  
+  **some wrong password**  
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+<a name="with>max_wd"></a>
+## Withdraw more than Maximum Limit
+  ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+Type here :  
 
+Enter the amount you want to withdraw (Rs.):  
 
-<a name="withdraw_money"></a>
-### 4. Withdraw Money
-*You can find the [code for withdrawing money](https://github.com/manchikatla-teja/ATM-Simul/blob/main/Withdraw.java) here.*  
+  Enter your password :   
+  
+  ### Input
+  2   
+  **Amount to Withdraw**  
+  **Correct Password**
+  
+  ### Output
+  Sorry, amount requested exceeded the maximum limit.  
+  
+  
+<a name="with>bal_wd"></a>
+## Withdraw more than Current Balance
+  ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+Type here :  
 
-The user is requested to enter the amount of money, they want to withdraw.  
-If their current balance is more than the amount they wish to withdraw and correct password is entered, then we accept the request of the user and allow them to withdraw money.  
-#### Feature added
-The *maximum amount* the user can withdraw has a limit according to their account type.  
-- If it is a *savings* account, then a maximum of **10,000 Rs.** withdrawal is allowed.  
-- If it is a *joint* account, then a maximum of **20,000 Rs.** withdrawal is allowed.  
-- If it is a *child* account, then withdrawal from ATM is **not** allowed.
+Enter the amount you want to withdraw (Rs.):  
 
+  Enter your password :   
+  
+  ### Input
+  2   
+  **Amount to Withdraw**  
+  **Correct Password**
+  
+  ### Output
+  Sorry, cannot withdraw the requested amount due to insufficient balance.  
+  
+  
+<a name="withdraw_wd"></a>
+## Successful Withdraw
+  ### Console
+  Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+Type here :  
 
-<a name="money_transfer"></a>
-### 5. Money Transfer
-*You can find the [code for transferring money](https://github.com/manchikatla-teja/ATM-Simul/blob/main/MoneyTransfer.java) here.*  
+Enter the amount you want to withdraw (Rs.):  
 
-We request the user to input the recipient's account number, and the amount they wish to transfer.
-If the current balance is more than the amount they wish to transfer and correct password is entered, then we accept the request of the user and allow them to transfer money.  
+  Enter your password :   
+  
+  ### Input
+  2   
+  **Amount to Withdraw**  
+  **Correct Password**
+  
+  ### Output
+  Collect your cash!  
+  
+  
+  
+<a name="account_ban_mt"></a>
+## Account Banned (Transfer Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :
+  ### Input
+4  
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+<a name="wrong_pass_mt"></a>
+## Entered Wrong Password (Transfer Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :
+  ### Input
+  4  
+  **some wrong password**
+### Output
+Your password was wrong.  
+  
+  
+  
+<a name="3_wrong_mt"></a>
+## Entered Wrong Password 3 Times (Transfer Money)
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+Type here :  
+Enter your password :  
+  Enter your password :  
+  Enter your password :  
+  ### Input
+  4  
+  **some wrong password**  
+  **some wrong password**  
+  **some wrong password**  
+### Output
+Your account has been temporarily blocked for security reasons.  
+Contact your nearest branch for removal of ban on your account.
+  
+  
+  
+<a name="tran>max_mt"></a>
+## Transfer Amount more than Current Balance 
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+  Type here :   
 
-This feature is **not** enabled for *child* account.
+Enter Recipient's Account Number please.  
+Type here :  
+  Enter the amount you want to transfer (Rs.):  
 
-<a name="add_features"></a>
-## Additional Features
-### Transaction Data
-*You can find the [code for saving transactions info](https://github.com/manchikatla-teja/ATM-Simul/blob/main/CheckBalance.java) in any of the functions' code above.*  
+  
+  ### Input
+  4  
+  **Recipient Account Number**  
+  **Amount to Transfer**  
+  ### Output
+  Insufficient balance to proceed with transfer.  
+Please input again.
+  
+  
+<a name="transfer_mt"></a>
+## Successful Transfer
+  ### Console
+Change Password  ==  1  
+Withdraw  ==  2  
+Deposit ==  3  
+Money Transfer  ==  4  
+Check Balance  == 5  
+Exit  ==  6  
+  
+  Type here :   
 
-We save all the information regarding the transactions that took place through the ATM in a *[text file](https://github.com/manchikatla-teja/ATM-Simul/blob/main/ATMTransactions.txt).*
+Enter Recipient's Account Number please.  
+Type here :  
+  Enter the amount you want to transfer (Rs.):  
+  Enter your password :  
+  
+  ### Input
+  4  
+  **Recipient Account Number**  
+  **Amount to Transfer**  
+  **Correct Password**  
+  ### Output
+  The transaction is successful!  
