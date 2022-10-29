@@ -1,0 +1,14 @@
+23412 Withdrawl 50000 30000
+23412 Money Transfer 12345 30000 28800
+23412 Balance Checked 
+23412 Deposit 28800 32800
+23412 Password changed 
+09870 Balance Checked 
+09870 Deposit 100 200
+23412 Password changed 
+12345 Withdrawl 10000 5000
+12345 Balance Checked 
+12345 Money Transfer 09870 5000 0
+12345 Balance Checked 
+12345 Deposit 0 5000
+12345 Balance Checked 
